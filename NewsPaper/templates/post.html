@@ -1,0 +1,13 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}Новости{% endblock title %}
+
+{% block content %}
+   <h1>{{ post.title }}</h1>
+    <h1>{{ post.dateCreation|date:'d M Y' }}</h1>
+    <a href="http://127.0.0.1:8000/news">Все новости</a>
+    <hr>
+    <h3>{{ post.text }}</h3>
+    <a href="http://127.0.0.1:8000/news/{{ post.id }}/edit">Изменить</a>
+    <a href="http://127.0.0.1:8000/news/{{ post.id }}/delete">Удалить</a>
+{% endblock content %}
