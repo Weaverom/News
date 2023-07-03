@@ -1,0 +1,24 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+Доска объявлений
+{% endblock title %}
+
+{% block content %}
+<h1>Доска объявлений</h1>
+<a href="http://127.0.0.1:8000/ad/create">Добавить объявление</a>
+    <table>
+        <tr>
+            <td>Заголовок</td>
+            <td>Описание</td>
+            <td>Категория</td>
+        </tr>
+        {% for post in ad %}
+        <tr>
+            <td> <a href="http://127.0.0.1:8000/ad/{{ post.id }}"> {{post.title }}</a> </td>
+            <td>{{ post.text|truncatechars:15 }}</td>
+            <td>{{ post.category }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock content %}

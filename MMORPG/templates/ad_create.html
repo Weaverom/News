@@ -1,0 +1,15 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+Добавление объявления
+{% endblock title %}
+
+{% block content %}
+<h1>Добавление объявления</h1>
+<a href="http://127.0.0.1:8000/ad">Главная страница</a>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save" />
+    </form>
+{% endblock content %}
